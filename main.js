@@ -81,7 +81,27 @@ function aparecerCompras() {
 }
 
 
+const productList = [];
+
+productList.push({
+    nombre: 'Bike',
+    precio: 120,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+})
+
+productList.push({
+    nombre: 'Pantalla',
+    precio: 3000,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+})
+
+productList.push({
+    nombre: 'Computador',
+    precio: 55000,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+})
 
 
-
-
+for (product of productList) {
+ 
+}
