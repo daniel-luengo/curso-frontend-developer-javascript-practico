@@ -34,7 +34,7 @@ const menuCambioClase = document.querySelector('.mobile-menu ')
 /* Menu click carrito de compra*/
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const seleccionesCarrito = document.querySelector('.product-detail');
-
+const cardsContainer = document.querySelector('.cards-container');
 
 
 enlaceClick.addEventListener('click', cambioClase);
@@ -84,19 +84,19 @@ function aparecerCompras() {
 const productList = [];
 
 productList.push({
-    nombre: 'Bike',
+    name: 'Bike',
     precio: 120,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 })
 
 productList.push({
-    nombre: 'Pantalla',
+    name: 'Pantalla',
     precio: 3000,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 })
 
 productList.push({
-    nombre: 'Computador',
+    name: 'Computador',
     precio: 55000,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 })
@@ -119,17 +119,44 @@ productList.push({
 
 
 for (products of productList) {
-    const div = document.createElement('div');
-    div.classList.add('product-card')
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card')
    
-    const img = document.createElement('img');
-    img.setAttribute('url' , products.image)
+    const productImg = document.createElement('img');
+    productImg.setAttribute('url' , products.image);
 
-    div.appendChild(img)
-    console.log(div)
+    productCard.appendChild(productImg);
+   
 
-    const productInfo = document.createElement('div')
-    productInfo.classList.add('product-info')
-    console.log(productInfo)
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+  
+
+    const productInfoDiv = document.createElement('div');
+
+    const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + products.precio;
+    
+
+    const productName = document.createElement('p');   
+    productName.innerText = products.name;
+
+    productInfo.appendChild(productPrice);
+    productInfoDiv.appendChild(productName);
+
+
+    const productInfoFigure = document.createElement('figure');
+    const productImgCart = document.createElement('img');
+    productImgCart.setAttribute('url', './icons/bt_add_to_cart.svg');
+
+    productInfoFigure.appendChild(productImgCart)
+
+productInfo.appendChild(productInfoDiv);
+productInfo.appendChild(productInfoFigure);
+
+productCard.appendChild(productImg);
+productCard.appendChild(productInfo);
+cardsContainer.appendChild(productCard);
+
 
 }
