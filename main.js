@@ -123,7 +123,7 @@ for (products of productList) {
     productCard.classList.add('product-card')
    
     const productImg = document.createElement('img');
-    productImg.setAttribute('url' , products.image);
+    productImg.setAttribute('src' , products.image);
 
     productCard.appendChild(productImg);
    
@@ -147,7 +147,7 @@ for (products of productList) {
 
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
-    productImgCart.setAttribute('url', './icons/bt_add_to_cart.svg');
+    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
 
     productInfoFigure.appendChild(productImgCart)
 
